@@ -2,7 +2,7 @@ package com.pmleczek.microservice.controller;
 
 import com.pmleczek.microservice.dto.Greeting;
 import com.pmleczek.microservice.entity.Person;
-import com.pmleczek.microservice.service.PersonService;
+import com.pmleczek.microservice.service.PersonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class HelloController {
     @Autowired
-    private PersonService personService;
+    private PersonServiceImpl personService;
 
     @GetMapping("/hello")
     public ResponseEntity<Greeting> hello(@RequestParam(defaultValue = "World", name = "name") String name) {
